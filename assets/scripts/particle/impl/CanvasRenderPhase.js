@@ -15,6 +15,9 @@ define(function(require, module, exports) {
 
         this.canvas = canvas;
         this.context = canvas.context;
+
+        this.context.strokeStyle = '#004466';
+        this.context.lineWidth = 4;
     }
 
     function extendParticle(ParticleClass) {
@@ -34,13 +37,13 @@ define(function(require, module, exports) {
             this.canvas.width, this.canvas.height
         );
 
-        this.context.strokeStyle = 'rgba(0, 55, 66, 0.2)';
-        this.context.lineWidth = 3;
+        this.context.strokeStyle = '#004466';
+        this.context.lineWidth = 4;
     }
 
     function phaseStep(elapsed, particle) {
         this.context.beginPath();
-        this.context.arc(particle.x, particle.y, particle.radius, 0, TWO_PI);
+        this.context.arc(Math.round(particle.x), Math.round(particle.y), particle.radius, 0, TWO_PI);
         this.context.stroke();
     }
 

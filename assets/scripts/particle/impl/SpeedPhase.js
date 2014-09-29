@@ -6,7 +6,7 @@ define(function(require, module, exports) {
     var Phase = require('particle/model/Phase');
 
     // pixels / milliseconds
-    var VELOCITY = 25    / 1000;
+    var VELOCITY = 75 / 1000;
 
     function SpeedPhase() {
         Phase.call(this);
@@ -27,32 +27,10 @@ define(function(require, module, exports) {
     function phaseStep(elapsed, particle) {
         if (particle.life === 0) {
             // Setup velocity
-            var isRight = particle.x >= this.width;
-            var isLeft = particle.x <= 0;
-            var isTop = particle.y <= 0;
-            var isBottom = particle.y >= this.height;
+            var angle = (Math.random() * 100) - 50;
 
-            var horizontal = 0;
-            var vertical = 0;
-            if (isRight) {
-                horizontal = -1;
-            } else if (isLeft) {
-                horizontal = 1;
-            }
-
-            if (isTop) {
-                vertical = 1;
-            } else if (isBottom) {
-                vertical = -1;
-            }
-
-            if (horizontal !== 0) {
-                particle.vx = horizontal * Math.random() * VELOCITY;
-            }
-
-            if (vertical !== 0) {
-                particle.vy = vertical * Math.random() * VELOCITY;
-            }
+            particle.vx = (Math.random() * VELOCITY) * Math.cos(angle);
+            particle.vy = (Math.random() * VELOCITY) * Math.sin(angle);
         }
 
         // Apply velocity

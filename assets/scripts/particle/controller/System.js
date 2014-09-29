@@ -10,7 +10,7 @@ define(function(require, module, exports) {
     var BoundsPhase = require('particle/impl/BoundsPhase');
     var CanvasRenderPhase = require('particle/impl/CanvasRenderPhase');
 
-    var NUMBER_OF_PARTICLES = 100;
+    var NUMBER_OF_PARTICLES = 200;
     var THRESHOLD = 300;
 
     function System() {

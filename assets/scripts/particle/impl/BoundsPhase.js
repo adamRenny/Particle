@@ -35,8 +35,8 @@ define(function(require, module, exports) {
     }
 
     function phaseStep(elapsed, particle) {
-        var isOOB = particle.x > this.width || particle.x < 0 ||
-            particle.y < 0 || particle.y > this.height;
+        var isOOB = particle.x - particle.radius > this.width || particle.x + particle.radius < 0 ||
+            particle.y + particle.radius < 0 || particle.y - particle.radius > this.height;
 
         if (isOOB) {
             particle.life = 0;

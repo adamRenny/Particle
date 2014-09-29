@@ -39,22 +39,8 @@ define(function(require, module, exports) {
             return;
         }
 
-        var isRight = particle.x > this.width;
-        var isLeft = particle.x < 0;
-        var isTop = particle.y < 0;
-        var isBottom = particle.y > this.height;
-
-        if (isRight) {
-            particle.x = 0;
-        } else if (isLeft) {
-            particle.y = this.width;
-        }
-
-        if (isTop) {
-            particle.y = 0;
-        } else if (isBottom) {
-            particle.y = this.height;
-        }
+        particle.x = -particle.radius;
+        particle.y = Math.round(Math.random() * (this.height + particle.radius));
     }
 
     RandomPhase.prototype = new Phase();
