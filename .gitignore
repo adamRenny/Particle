@@ -1,0 +1,5 @@
+node_modules/
+.DS_Store
+._*
+.idea/dictionaries/*.xml
+.idea/workspace.xml

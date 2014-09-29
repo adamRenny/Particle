@@ -1,0 +1,39 @@
+{
+    // Activate Strict Mode
+    "strict": true,
+
+    // Base Style Requirements
+    "undef": true,
+    "camelcase": true,
+    "quotmark": "single",
+    "curly": true,
+    "indent": 4,
+    "newcap": true,
+    "noarg": true,
+    "nonew": true,
+    "maxlen": 120,
+
+    // Content Safety
+    "nonbsp": true,
+
+    // Variable Scope Safety
+    "latedef": "nofunc",
+    "immed": true,
+    "freeze": true,
+    "unused": true,
+    "predef": [
+        // RequireJS
+        "require",
+        "define"
+    ],
+
+    // Complexity
+    "maxcomplexity": 12,
+
+    // Environment
+    "browser": true,
+    "devel": true,
+
+    // Object Organization
+    "validthis": true
+}
